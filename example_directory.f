@@ -1,2 +1,2 @@
-example_directory/example1.tcl
-example_directory/example2.tcl
+example_directory\txt_example1.txt
+example_directory\ex1\ex1_1.txt

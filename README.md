@@ -34,19 +34,27 @@ To include only files that match a specific pattern, use the `--filter` option. 
 
 #### Examples
 
-1. **Filter by file extension**:
-    ```sh
-    python make_filelist.py example_directory example_directory.f --filter "*.tcl"   
-    ```
-
-   This command will only include files with the `.tcl` extension.
-
-2. **Filter by file name pattern**:
+1. **폴더 내 모든 파일 리스트 저장 (재귀적 검색)**:
    ```sh
-   python make_filelist.py example_directory filelist.f --filter "example*.exe"
+   python create_file_list.py /path/to/directory filelist.f -r
    ```
 
-   This command will include files that start with `example` and have the `.exe` extension.
+2. **폴더 내 특정 확장자의 파일만 필터링 (재귀적 검색)**:
+   ```sh
+   python create_file_list.py /path/to/directory filelist.f --filter "*.tcl" -r
+   ```
+
+3. **폴더 내 특정 이름 패턴의 파일만 필터링 (재귀적 검색)**:
+   ```sh
+   python create_file_list.py /path/to/directory filelist.f --filter "example*.exe" -r
+   ```
+
+4. **폴더 내 모든 파일 리스트 저장 (비재귀적 검색)**:
+   ```sh
+   python create_file_list.py /path/to/directory filelist.f
+   ```
+
+`-r` 옵션을 사용하여 디렉토리를 재귀적으로 검색하도록 할 수 있습니다. 이 옵션을 사용하지 않으면, 스크립트는 기본적으로 현재 디렉토리에서만 파일을 검색합니다.
 
 ### Output
 
